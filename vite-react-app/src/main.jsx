@@ -1,6 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { App, Gallery } from './App';
+
 
 function MyApp(){
   return(
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
     <h2>Hello This is Creating a React Fragment syntax</h2>
     <MyApp />
+    <Gallery />
     </>
   </React.StrictMode>
 )
