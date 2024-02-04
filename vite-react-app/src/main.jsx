@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App, Gallery } from './App';
-
+import { Carousel, Navbar, ProdCard } from './Chai';
 
 function MyApp(){
   return(
@@ -11,16 +10,27 @@ function MyApp(){
   )
 }
 
-
+// React core librery under some method create element in this avobe
+// const globalVariable='Hello World !'
+// const reactElement=React.createElement(
+//   "a",
+//   {href:'https://google.com',target:'_blank'},
+//   'Click to visit Google',
+//   globalVariable
+// )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <>
-    <App />
-    <h2>Hello This is Creating a React Fragment syntax</h2>
-    <MyApp />
-    <Gallery />
-    </>
+  <>
+  <Navbar />
+  <Carousel />
+  <ProdCard />
+  {/* <App /> */}
+  {/* <MyApp /> */}
+  {/* <Gallery /> */}
+  </>
   </React.StrictMode>
 )
 /* react fragment syntax <> </> */
+
+
