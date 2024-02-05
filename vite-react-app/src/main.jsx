@@ -26,11 +26,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Carousel />
   <ProdCard />
   {/* <App /> */}
-  {/* <MyApp /> */}
+  {/* <MyApp /> */} 
   {/* <Gallery /> */}
   </>
   </React.StrictMode>
 )
 /* react fragment syntax <> </> */
-
+cd
 
