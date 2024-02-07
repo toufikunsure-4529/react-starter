@@ -7,10 +7,11 @@ function App() {
   const obj={
     name:"dev_74"
   };
+  const myArr=['HTML','CSS','Javascript','React']
   return (
     <>
       <h1>Tailwind CSS</h1>
-      <Card userName='Javascript' btnText='Click Me' />
+      <Card userName='Javascript' btnText='Click Me' dataObj={obj} technologies={myArr}/>
       <Card userName='Object' btnText='Visit Me' />
       <Card />
     </>

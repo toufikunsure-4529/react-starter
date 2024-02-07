@@ -1,5 +1,5 @@
 import React from "react";
-function Card({userName='NO DATA FOUND',btnText='GO & VISIT'}) {
+function Card({userName='No Data Found',btnText='GO & VISIT'}) {
   
   return (
     <>
