@@ -14,6 +14,15 @@ function App() {
       setCounter(counter+1) //set counter function call to counter variable value update +1
     }
   }
+
+// When setCounter function exprected callback and we also on click to update variable like previus value direct counter+1 write to value not update becaouse react fiber alogorithm batch update to same code repeat not changes DOM UI
+//   const addValue=()=>{
+//     setCounter((prevCounter)=>prevCounter+1) //7
+//     setCounter((prevCounter)=>prevCounter+1) //8
+//     setCounter((prevCounter)=>prevCounter+1) //9
+//     setCounter((prevCounter)=>prevCounter+1) //10
+// }
+
   
   const removeValue=()=>{
     if(counter<=0){
