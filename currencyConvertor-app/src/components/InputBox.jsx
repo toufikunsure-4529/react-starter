@@ -42,7 +42,7 @@ function InputBox({
           disabled={currencyDisable}
         >
          {currencyOptions.map((currency)=>{
-          return <option value={currency} key={currency}>{currency}</option> //jsx syntax under loop used like this prps pass array of the option value aftre we .map method used but jsx under loop react performance vary slower prefer to used special attribute key means like array to key we paass unique value beacouse react not understand same element repedatly create so pass key unique of value 
+          return <option value={currency} key={currency}>{currency.toUpperCase()}</option> //jsx syntax under loop used like this prps pass array of the option value aftre we .map method used but jsx under loop react performance vary slower prefer to used special attribute key means like array to key we paass unique value beacouse react not understand same element repedatly create so pass key unique of value 
          })}
         </select>
       </div>
