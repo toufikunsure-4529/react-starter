@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Layout from './Layout';
 import About from './components/About/About.jsx';
+import Contact from './components/Contact/Contact.jsx';
 import Home from './components/Home/Home.jsx';
 import './index.css';
 
@@ -18,6 +19,10 @@ const router=createBrowserRouter([
       },{
         path:'about',
         element:<About />
+      },
+      {
+        path:"contact",
+        element:<Contact />
       }
     ] //children add for Home about contact  page nesting routing
   }
