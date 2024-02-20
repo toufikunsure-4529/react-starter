@@ -1,9 +1,13 @@
+import * as React from 'react';
 import { useState } from "react";
+
 
 function App() {
   const [color, setColor] = useState("olive");
   // onClick={setColor("blue")} we never write this type onclick under function return excute because onclick methood expect only function not funtion return value its problem js syntax issue we cannnot pass on click function under parameters so we used onclick under callback and setColor function run
   return (
+    <>
+
     <div
       className="w-full h-screen duration-200"
       style={{ backgroundColor: color }}
@@ -48,7 +52,9 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
-export default App;
+export { App };
+
