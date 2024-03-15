@@ -1,17 +1,17 @@
-import './App.css'
-import Login from './components/Login'
-import Profile from './components/Profile'
-import UserContextProvider from './context/UserContextProvider'
+import React from "react";
+import './App.css';
+import Login from "./components/Login";
+import Profile from "./components/Profile";
+import { UserContextProvider } from "./context/UserContextProvider";
 
 function App() {
-
   return (
-    <UserContextProvider> {/* Wrap this provider method and all value will nesting component  */}
-      <h1>React With Context API</h1>
+    <UserContextProvider>
+      <h2>Context API Mini Project</h2>
       <Login />
       <Profile />
     </UserContextProvider>
-  )
+  );
 }
 
-export default App
+export default App;

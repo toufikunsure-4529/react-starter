@@ -1,13 +1,17 @@
 import React, { useContext } from 'react'
-import UserContext from '../context/userContext'
+import { UserContext } from '../context/UserContext'
 
 function Profile() {
   const {user}=useContext(UserContext)
   if(!user){
-    return <div>Please Login and Continue</div> //conditional rendaring if username not input showing component 
+    return (
+      <h3>Please Login to continue</h3>
+    )
   }
   else{
-    return <div>Welcome {user.userName.slice(0,6).toUpperCase()}</div> //user input to show this component div
+    return (
+      <h3>Welcome {user.userName.slice(0,6).toUpperCase()}</h3>
+    )
   }
 }
 
