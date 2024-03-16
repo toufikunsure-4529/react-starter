@@ -4,7 +4,7 @@ function SearchInputBox({ inputValue, onChangeInputValue, handleSubmit }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm flex items-center"
+      className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm flex items-center justify-center"
     >
       <input
         type="text"
