@@ -1,4 +1,4 @@
-const config = {
+const conf = {
   appwriteUrl: String(import.meta.env.VITE_APPWRITE_URL), //.env file db id other this environtvariable must be string store other wise app crush so this reason config object create
   appwriteProjectId: String(import.meta.env.VITE_APPWRITE_PROJECT_ID),
   appwriteDatabaseId: String(import.meta.env.VITE_APPWRITE_DATABASE_ID),
@@ -7,4 +7,4 @@ const config = {
 
 }
 
-export default config
+export default conf
