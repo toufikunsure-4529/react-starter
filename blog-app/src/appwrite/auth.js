@@ -20,8 +20,8 @@ class AuthService {
       console.log("Please Wait....")
       const userAccount = await this.account.create(ID.unique(), email, password, name) //create is appwrite create account method parametor expect 1st id ID.uniwue() is a appwrite method email password so on...
       if (userAccount) {
-        this.login({n})
-        console.log("User Create Success...")
+        this.login({email,password})
+        alert("User Create Success...")
       }
       else {
         return userAccount;

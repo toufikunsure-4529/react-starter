@@ -6,7 +6,7 @@ function App() {
   console.log(conf.appwriteBucketId);
 
   const auth = () => {
-    const email = "toufiksk.ab3@gmail.com52";
+    const email = "toufiksk.ab3@gmail.com52299";
     const password = "Toufik@95959595"; // Not recommended to store password as plain text
     const name = "Toufik";
     authServiceObj.createAccount({ email, password, name });
