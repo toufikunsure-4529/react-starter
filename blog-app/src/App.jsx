@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { authServiceObj } from "./appwrite/auth";
 import { Footer, Header } from "./components";
@@ -9,6 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true); //to fetch data network request to conditaional redaring loading loader
   const dispatch = useDispatch();
 
+  //this use effect check when browser reload to check user current status and updated store
   useEffect(() => {
     authServiceObj
       .getCurrentUser()
@@ -29,16 +33,21 @@ function App() {
     authServiceObj.createAccount({ email, password, name });
   };
 
-  return !loading ? (
+  return (
     <div className="min-h-screen flex flex-wrap content-between bg-green-300">
       <div className="w-full block">
         <Header />
-        <main>{/* <Outlet /> */}</main>
+        {loading ? (
+          <h1 className="text-center text-red-700 text-2xl">Loading...</h1>
+        ) : (
+          <main>
+            <Outlet />
+          </main>
+        )}
         <Footer />
       </div>
+      <ToastContainer />;
     </div>
-  ) : (
-    <h1 className="text-center text-red-700 text-2xl">Loading...</h1>
   );
 }
 
