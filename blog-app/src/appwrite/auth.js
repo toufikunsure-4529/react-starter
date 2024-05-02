@@ -1,4 +1,5 @@
 import { Account, Client, ID } from "appwrite";
+import { toast } from "react-toastify";
 import conf from "../conf/conf";
 
 //we create auth service class base better approce for object to login signup method access and another backend services create to simple change constructor method and other littely changes
@@ -20,14 +21,14 @@ class AuthService {
       console.log("Please Wait....")
       const userAccount = await this.account.create(ID.unique(), email, password, name) //create is appwrite create account method parametor expect 1st id ID.uniwue() is a appwrite method email password so on...
       if (userAccount) {
-        this.login({email,password})
-        alert("User Create Success...")
+        this.login({ email, password })
+        toast.success("User Create Success Please Login")
       }
       else {
         return userAccount;
       }
     } catch (error) {
-      console.log("Error : appwrite auth createAccoount", error);
+      toast.error(error.message)
     }
   }
 
@@ -35,9 +36,10 @@ class AuthService {
   async login({ email, password }) {
     try {
       const userLogin = await this.account.createEmailSession(email, password)
+      toast.success("Logged Successfull")
       return userLogin;
     } catch (error) {
-      console.log("Error : appwrite auth login", error)
+      toast.error(error.message)
     }
   }
 
@@ -48,7 +50,7 @@ class AuthService {
       const currentUser = await this.account.get()
       return currentUser;
     } catch (error) {
-      console.log("Error : appwrite auth getCurrentUser", error)
+      console.log(error.message)
     }
     return null; //if current user not found && try catch error simply method return null value;
   }
@@ -56,10 +58,12 @@ class AuthService {
   //logout method
   async logout() {
     try {
-      return await this.account.deleteSessions()
-      console.log("done")
+      const session = await this.account.deleteSessions()
+      toast.success("Logout Success")
+      return session
+
     } catch (error) {
-      console.log("Error : appwrite auth logout", error) //all tab sesson not logout deleteSession('current') but we all tab deleteSessions used
+      toast.error(error.message)
     }
   }
 

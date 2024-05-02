@@ -7,6 +7,7 @@ import "./App.css";
 import { authServiceObj } from "./appwrite/auth";
 import { Footer, Header } from "./components";
 import { login, logout } from "./features/authSlice";
+import Signup from "./components/Signup";
 
 function App() {
   const [loading, setLoading] = useState(true); //to fetch data network request to conditaional redaring loading loader
@@ -40,13 +41,13 @@ function App() {
         {loading ? (
           <h1 className="text-center text-red-700 text-2xl">Loading...</h1>
         ) : (
-          <main>
+          <main className="py-6">
             <Outlet />
           </main>
         )}
         <Footer />
       </div>
-      <ToastContainer />;
+      <ToastContainer />
     </div>
   );
 }
