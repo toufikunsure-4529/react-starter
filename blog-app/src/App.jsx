@@ -8,6 +8,8 @@ import { authServiceObj } from "./appwrite/auth";
 import { Footer, Header } from "./components";
 import { login, logout } from "./features/authSlice";
 import Signup from "./components/Signup";
+import Rte from "./components/Rte";
+import PostForm from "./components/post-form/PostForm";
 
 function App() {
   const [loading, setLoading] = useState(true); //to fetch data network request to conditaional redaring loading loader
@@ -42,6 +44,7 @@ function App() {
           <h1 className="text-center text-red-700 text-2xl">Loading...</h1>
         ) : (
           <main className="py-6">
+            <PostForm />
             <Outlet />
           </main>
         )}
