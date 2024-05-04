@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Container, Logo, LogoutBtn } from "../index";
 
 function Header() {
-  const authStatus = useSelector((state) => state.status); //user current status check from store loggedIn Or not
+  const authStatus = useSelector((state) => state.auth.status); //user current status check from store loggedIn Or not
   const navigate = useNavigate(); //when any button click to navigate url /login /signup to this method used react-routerdom and navigate(url) pass to /login /signup
 
   const navItems = [

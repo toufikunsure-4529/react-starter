@@ -105,7 +105,7 @@ export class DatabaseServices {
 
 
   //image get filepreview
-  getFIlePreview(fileId) {
+  getFilePreview(fileId) {
     return this.storage.getFilePreview(conf.appwriteBucketId, fileId)
   }
 

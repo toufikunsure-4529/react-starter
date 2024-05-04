@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { authServiceObj } from "../../appwrite/auth";
@@ -7,6 +8,7 @@ import { logout } from "../../features/authSlice";
 
 function LogoutBtn() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     //auth service appwrite this method define logout and return promise so write .then
@@ -14,6 +16,7 @@ function LogoutBtn() {
       .logout()
       .then(() => {
         dispatch(logout()); //when logut method call to successfully logout dispatch store update user are logout
+        navigate("/login");
       })
       .catch((error) => {
         toast.error("Error:While Logout", error);

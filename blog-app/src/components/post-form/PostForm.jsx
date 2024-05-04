@@ -19,7 +19,7 @@ function PostForm({ post }) {
     }); // watch is a  any field continus monitor to used watching capability watch && any inpur element under value set to using setValue && control is form control and which is pass Rte under control state/eveent so on && getValues full form value get using this method
 
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.userData); //get userData store to get
+  const userData = useSelector((state) => state.auth.userData); //get userData store to get
 
   const submit = async (data) => {
     //post are avilable logic start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

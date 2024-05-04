@@ -13,7 +13,6 @@ function Login() {
   const [error, setError] = useState(null);
 
   const login = async (data) => {
-    console.log(data);
     setError(""); //this good tricks when submission start input error cleanup
     try {
       const session = await authServiceObj.login(data); //under auth login method pass data email/password

@@ -50,7 +50,7 @@ class AuthService {
       const currentUser = await this.account.get()
       return currentUser;
     } catch (error) {
-      console.log(error.message)
+      // toast.error(error.message)
     }
     return null; //if current user not found && try catch error simply method return null value;
   }

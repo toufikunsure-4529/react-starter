@@ -4,12 +4,10 @@ import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import Loading from "./Loading";
 import { authServiceObj } from "./appwrite/auth";
 import { Footer, Header } from "./components";
 import { login, logout } from "./features/authSlice";
-import Signup from "./components/Signup";
-import Rte from "./components/Rte";
-import PostForm from "./components/post-form/PostForm";
 
 function App() {
   const [loading, setLoading] = useState(true); //to fetch data network request to conditaional redaring loading loader
@@ -29,22 +27,14 @@ function App() {
       .finally(() => setLoading(false)); //finally every time run so when data will be fetch to loading loader stop
   }, []);
 
-  const auth = () => {
-    const email = "toufiksk.ab3@gmail.com52299";
-    const password = "Toufik@95959595"; // Not recommended to store password as plain text
-    const name = "Toufik";
-    authServiceObj.createAccount({ email, password, name });
-  };
-
   return (
     <div className="min-h-screen flex flex-wrap content-between bg-green-300">
       <div className="w-full block">
         <Header />
         {loading ? (
-          <h1 className="text-center text-red-700 text-2xl">Loading...</h1>
+          <Loading />
         ) : (
           <main className="py-6">
-            <PostForm />
             <Outlet />
           </main>
         )}

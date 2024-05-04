@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Loading from "../Loading";
 
 //to function check childreen render or not using conditional rendaring
-function Protected({ children, authentication = true }) {
+function AuthLayout({ children, authentication = true }) {
   const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
   const authStatus = useSelector((state) => state.auth.status); //get to state user are loggedin or not?
@@ -25,7 +26,7 @@ function Protected({ children, authentication = true }) {
 
     setLoader(false);
   }, [authStatus, navigate, authentication]);
-  return loader ? <h1>Loading...</h1> : <>{children} </>; //condition check if loading to show loading other wise children
+  return loader ? <Loading /> : <>{children} </>; //condition check if loading to show loading other wise children
 }
 
-export default Protected;
+export default AuthLayout;
